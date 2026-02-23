@@ -8,15 +8,15 @@
 
 # Project Timeline Overview (4–6 Weeks)
 
-| Milestone | Name                         | Duration  | Outcome                            |
-| --------- | ---------------------------- | --------- | ---------------------------------- |
-| M1        | Project Setup & Foundation   | Week 1    | Working base app + DB schema       |
-| M2        | Core Public Pages            | Week 2    | Portfolio + Services live          |
-| M3        | Booking System (Core Logic)  | Week 3    | Multi-client booking functional    |
-| M4        | Contact + Quote + Admin APIs | Week 4    | Inquiry & admin control working    |
-| M4.5      | Admin Dashboard UI           | Week 4–5  | Full content management dashboard  |
-| M5        | SEO, Security & Optimization | Week 5–6  | Production hardened                |
-| M6        | Deployment & UAT             | Week 6–7  | Live production release            |
+| Milestone | Name                         | Duration | Outcome                           |
+| --------- | ---------------------------- | -------- | --------------------------------- |
+| M1        | Project Setup & Foundation   | Week 1   | Working base app + DB schema      |
+| M2        | Core Public Pages            | Week 2   | Portfolio + Services live         |
+| M3        | Booking System (Core Logic)  | Week 3   | Multi-client booking functional   |
+| M4        | Contact + Quote + Admin APIs | Week 4   | Inquiry & admin control working   |
+| M4.5      | Admin Dashboard UI           | Week 4–5 | Full content management dashboard |
+| M5        | SEO, Security & Optimization | Week 5–6 | Production hardened               |
+| M6        | Deployment & UAT             | Week 6–7 | Live production release           |
 
 ---
 
@@ -399,9 +399,25 @@ Add 10–15% buffer for:
 
 # 📦 Phase 2 (Post-MVP Expansion)
 
-- Payment gateway integration
-- Email automation
-- Google Calendar sync
 - Advanced analytics in admin dashboard
 - Advanced slot engine
 - WhatsApp integration
+
+---
+
+# 🎨 Feature Addendum: Foundation Shade Finder
+
+**Duration:** 3–5 days (Completed)
+
+## Objectives
+
+- Integrate rule-based (No AI) HTML5 Canvas skin tone extraction
+- Implement UI flow for Shade Finder and Makeup Lead Generation
+- Create Supabase bucket and schema for `foundation_leads`
+- Deploy page at `/shade-finder` and handle `POST /api/shade-leads`
+
+## Acceptance Criteria
+
+- Uploaded images must be processed locally without external ML/AI APIs.
+- Output accurate undertones/depth based on RGB relativity.
+- Form successfully pushes Lead data+Image URL to `foundation_leads` DB.

@@ -7,6 +7,8 @@ import type { Service } from "@/types/database.types";
 import type { CartItem } from "@/types/booking.types";
 import ClientCard from "./client-card";
 import BookingSummary from "./booking-summary";
+import { DatePicker } from "@/components/ui/date-picker";
+import { TimePicker } from "@/components/ui/time-picker";
 
 interface BookingFormProps {
   services: Service[];
@@ -24,7 +26,7 @@ export default function BookingForm({ services }: BookingFormProps) {
   function handleToggleService(clientIndex: number, service: CartItem) {
     const client = store.clients[clientIndex];
     const exists = client.services.some(
-      (s) => s.serviceId === service.serviceId
+      (s) => s.serviceId === service.serviceId,
     );
     if (exists) {
       store.removeServiceFromClient(clientIndex, service.serviceId);
@@ -35,7 +37,7 @@ export default function BookingForm({ services }: BookingFormProps) {
 
   function canProceedToDetails(): boolean {
     return store.clients.every(
-      (client) => client.clientName.trim() !== "" && client.services.length > 0
+      (client) => client.clientName.trim() !== "" && client.services.length > 0,
     );
   }
 
@@ -117,7 +119,11 @@ export default function BookingForm({ services }: BookingFormProps) {
               onClick={() => {
                 if (s === "services") setStep(s);
                 if (s === "details" && canProceedToDetails()) setStep(s);
-                if (s === "review" && canProceedToDetails() && canProceedToReview())
+                if (
+                  s === "review" &&
+                  canProceedToDetails() &&
+                  canProceedToReview()
+                )
                   setStep(s);
               }}
               className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${
@@ -136,12 +142,10 @@ export default function BookingForm({ services }: BookingFormProps) {
               {s === "services"
                 ? "Services"
                 : s === "details"
-                ? "Details"
-                : "Review"}
+                  ? "Details"
+                  : "Review"}
             </span>
-            {i < 2 && (
-              <div className="w-8 sm:w-16 h-0.5 bg-border mx-1" />
-            )}
+            {i < 2 && <div className="w-8 sm:w-16 h-0.5 bg-border mx-1" />}
           </div>
         ))}
       </div>
@@ -226,33 +230,34 @@ export default function BookingForm({ services }: BookingFormProps) {
                 <label className="block text-sm font-medium text-text-muted mb-1">
                   Event Date *
                 </label>
-                <input
-                  type="date"
+                <DatePicker
                   value={store.eventDate}
-                  onChange={(e) =>
+                  onChange={(date) =>
                     store.setEventDetails({
                       ...store,
-                      eventDate: e.target.value,
+                      eventDate: date,
                     })
                   }
-                  min={new Date().toISOString().split("T")[0]}
-                  className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-text focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                  minDate={new Date().toISOString().split("T")[0]}
+                  placeholder="Select Event Date"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-text-muted mb-1">
                   Event Time *
                 </label>
-                <input
-                  type="time"
+                <TimePicker
                   value={store.eventTime}
-                  onChange={(e) =>
+                  onChange={(time) =>
                     store.setEventDetails({
                       ...store,
-                      eventTime: e.target.value,
+                      eventTime: time,
                     })
                   }
-                  className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-text focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                  placeholder="Select Event Time"
+                  interval={30}
+                  startTime="00:00"
+                  endTime="23:59"
                 />
               </div>
             </div>

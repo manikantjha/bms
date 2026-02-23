@@ -264,5 +264,18 @@ The project will be considered complete when:
 - Admin authentication restricts dashboard access to authorized users only
 - SEO implementation is verified
 - Deployment is successful
-- Forms save data properly in Supabase
 - Responsive layout works across devices
+
+---
+
+## 13. Feature Addendum: Foundation Shade Finder + Lead Funnel
+
+### 13.1 Objective
+
+Build a web feature that allows users to upload a photo, detects skin tone & undertone using rule-based color analysis (pure client-side HTML5 Canvas, NO AI/ML), recommends suitable foundation shades, educates users, and captures makeup service leads securely in Supabase.
+
+### 13.2 Scope
+
+- **Upload & Processing**: Drag & drop upload, auto-compression, Supabase Storage integration.
+- **Rules Engine**: Central cheek region sampling, RGB to HSL conversion, static shade mapping based on lightness and color channel deltas.
+- **Lead Capture**: Form collecting Name, Email, Phone, selected service, and mapped shades, securely stored in the `foundation_leads` Supabase table.

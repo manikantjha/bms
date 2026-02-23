@@ -77,3 +77,18 @@ export interface Payment {
   transaction_reference: string | null;
   created_at: string;
 }
+
+export interface FoundationLead {
+  id: string;
+  full_name: string;
+  email: string;
+  phone: string | null;
+  image_url: string;
+  undertone: string;
+  depth: string;
+  avg_rgb: { r: number; g: number; b: number };
+  recommended_shades: string[];
+  interested_in_makeup: boolean;
+  selected_service: string | null;
+  created_at: string;
+}

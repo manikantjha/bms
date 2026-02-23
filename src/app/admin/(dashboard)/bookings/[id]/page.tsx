@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, use } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Loader2 } from "lucide-react";
+import { ArrowLeft, Check, Loader2, X } from "lucide-react";
 import { useAdminFetch } from "@/lib/admin-auth-client";
 import AdminPageHeader from "@/components/admin/admin-page-header";
 import StatusBadge from "@/components/admin/status-badge";
@@ -97,7 +97,7 @@ export default function BookingDetailPage({
     <div>
       <button
         onClick={() => router.push("/admin/bookings")}
-        className="flex items-center gap-2 text-sm text-text-muted hover:text-primary mb-4 transition-colors"
+        className="flex items-center gap-2 text-sm text-text-muted hover:text-primary mb-4 transition-colors cursor-pointer"
       >
         <ArrowLeft size={16} />
         Back to Bookings
@@ -214,11 +214,12 @@ export default function BookingDetailPage({
                 <button
                   onClick={() => updateStatus("confirmed")}
                   disabled={updating}
-                  className="w-full bg-emerald-500 text-white py-2.5 rounded-full font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 text-sm"
+                  className="w-full bg-emerald-500 text-white py-2.5 rounded-full font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 text-sm cursor-pointer"
                 >
                   {updating ? (
                     <Loader2 size={16} className="animate-spin" />
                   ) : null}
+                  <Check size={16} />
                   Confirm Booking
                 </button>
               )}
@@ -226,11 +227,12 @@ export default function BookingDetailPage({
                 <button
                   onClick={() => updateStatus("cancelled")}
                   disabled={updating}
-                  className="w-full bg-red-500 text-white py-2.5 rounded-full font-semibold hover:bg-red-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 text-sm"
+                  className="w-full bg-red-500 text-white py-2.5 rounded-full font-semibold hover:bg-red-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 text-sm cursor-pointer"
                 >
                   {updating ? (
                     <Loader2 size={16} className="animate-spin" />
                   ) : null}
+                  <X size={16} />
                   Cancel Booking
                 </button>
               )}

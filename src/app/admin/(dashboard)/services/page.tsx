@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Plus } from "lucide-react";
+import { Delete, Edit, Plus, Trash, Trash2 } from "lucide-react";
 import { useAdminFetch } from "@/lib/admin-auth-client";
 import AdminPageHeader from "@/components/admin/admin-page-header";
 import DataTable, { type Column } from "@/components/admin/data-table";
@@ -120,18 +120,18 @@ export default function AdminServicesPage() {
               e.stopPropagation();
               openEdit(s);
             }}
-            className="text-xs text-primary hover:underline"
+            className="text-xs text-primary hover:underline cursor-pointer"
           >
-            Edit
+            <Edit className="w-5 h-5" />
           </button>
           <button
             onClick={(e) => {
               e.stopPropagation();
               handleDelete(s.id);
             }}
-            className="text-xs text-red-500 hover:underline"
+            className="text-xs text-red-500 hover:underline cursor-pointer"
           >
-            Disable
+            <Trash2 className="w-5 h-5" />
           </button>
         </div>
       ),

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface FormState {
   name: string;
@@ -141,17 +142,11 @@ export default function ContactForm() {
         />
       </div>
 
-      <label className="flex items-center gap-3 cursor-pointer">
-        <input
-          type="checkbox"
-          checked={form.isQuoteRequest}
-          onChange={(e) => updateField("isQuoteRequest", e.target.checked)}
-          className="w-5 h-5 rounded border-border text-primary focus:ring-primary/30"
-        />
-        <span className="text-sm text-text-muted">
-          I&apos;d like to request a custom quote
-        </span>
-      </label>
+      <Checkbox
+        checked={form.isQuoteRequest}
+        onChange={(checked) => updateField("isQuoteRequest", checked)}
+        label="I'd like to request a custom quote"
+      />
 
       <button
         type="submit"

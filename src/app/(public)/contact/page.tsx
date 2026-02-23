@@ -28,13 +28,13 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Mumbai, Maharashtra, India",
+    value: "Surat, Gujarat, India",
   },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Mon–Sat: 9 AM – 7 PM",
-  },
+  // {
+  //   icon: Clock,
+  //   label: "Hours",
+  //   value: "Mon–Sat: 9 AM – 7 PM",
+  // },
 ];
 
 export default function ContactPage() {

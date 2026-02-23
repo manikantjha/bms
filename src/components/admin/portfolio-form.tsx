@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import ImageUpload from "./image-upload";
 import type { PortfolioItem } from "@/types/database.types";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface PortfolioFormProps {
   item?: PortfolioItem | null;
@@ -127,15 +128,11 @@ export default function PortfolioForm({
         />
       </div>
 
-      <label className="flex items-center gap-2 cursor-pointer">
-        <input
-          type="checkbox"
-          checked={isFeatured}
-          onChange={(e) => setIsFeatured(e.target.checked)}
-          className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
-        />
-        <span className="text-sm text-text">Featured item</span>
-      </label>
+      <Checkbox
+        checked={isFeatured}
+        onChange={setIsFeatured}
+        label={<span className="text-text">Featured item</span>}
+      />
 
       <div className="flex gap-3 pt-2">
         <button
