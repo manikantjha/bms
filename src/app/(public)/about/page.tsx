@@ -12,6 +12,7 @@ import {
   Calendar,
 } from "lucide-react";
 import { NAME } from "@/config";
+import artistPortrait from "@/public/images/artist-portrait.jpg";
 
 export const metadata: Metadata = {
   title: "About",
@@ -23,19 +24,13 @@ export const metadata: Metadata = {
   },
 };
 
-const certifications = [
-  "Certified Professional Makeup Artist — International Makeup Association (IMA)",
-  "Advanced Bridal & Editorial Makeup — London School of Makeup",
-  "Airbrush Technique Specialist — Temptu Pro Certification",
-  "Skincare & Prep Certified — Dermalogica Expert Program",
-  "HD & Film Makeup — National Academy of Media Arts",
-];
+const certifications = ["Certified Professional Makeup Artist — VLCC"];
 
 const experienceHighlights = [
-  { icon: Users, label: "Happy Clients", value: "500+" },
-  { icon: Palette, label: "Years of Experience", value: "8+" },
-  { icon: Heart, label: "Bridal Looks", value: "200+" },
-  { icon: Star, label: "5-Star Reviews", value: "150+" },
+  { icon: Users, label: "Happy Clients", value: "250+" },
+  { icon: Palette, label: "Years of Experience", value: "3.5+" },
+  { icon: Heart, label: "Bridal Looks", value: "50+" },
+  { icon: Star, label: "5-Star Reviews", value: "100+" },
 ];
 
 const testimonials = [
@@ -104,7 +99,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-border">
               <Image
-                src="/images/artist-portrait.jpg"
+                src={artistPortrait}
                 alt={`Bhavana - Professional Makeup Artist Portrait`}
                 fill
                 className="object-cover"
@@ -122,23 +117,24 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-text-muted leading-relaxed">
                 <p>
-                  With over 8 years of experience in the beauty industry, I have
-                  dedicated my career to helping people look and feel their
-                  absolute best. My journey began with a deep fascination for
-                  colour, texture, and the transformative power of makeup.
+                  With over 3.5 years of experience in the beauty industry, I’ve
+                  built my career around enhancing natural beauty with skill,
+                  creativity, and attention to detail. My journey began with a
+                  genuine love for colour, texture, and the artistry behind
+                  makeup.
                 </p>
                 <p>
-                  From intimate bridal mornings to high-energy editorial shoots,
-                  I bring the same level of passion and precision to every
-                  appointment. I believe that great makeup does not mask who you
-                  are — it reveals the most radiant version of yourself.
+                  From intimate bridal preparations to special occasions and
+                  professional shoots, I bring dedication and precision to every
+                  appointment. I believe makeup should never hide who you are —
+                  it should highlight your most confident and radiant self.
                 </p>
                 <p>
-                  Based in Mumbai, I have had the privilege of working with
-                  hundreds of brides, leading fashion photographers, and
-                  renowned publications. My approach combines classic techniques
-                  with modern trends, always tailored to complement each
-                  individual's unique features and personal style.
+                  Based in Surat, Gujarat, I’ve completed over 250 makeup
+                  applications, each thoughtfully tailored to suit individual
+                  features, preferences, and occasions. By blending timeless
+                  techniques with modern trends, I create looks that feel
+                  elegant, refined, and uniquely personal.
                 </p>
               </div>
 
